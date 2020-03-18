@@ -2,31 +2,35 @@
     <ion-menu menuId="first" contentId="main" side="start">
         <ion-header>
             <ion-toolbar>
-                <ion-title>
-                    PairBnB
+                <ion-title class="title">
+                    <ion-item lines="none" color="secondary">
+                        <!-- <ion-icon name="bulb"> </ion-icon> -->
+                    </ion-item>
                 </ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content>
             <ion-list>
                 <ion-menu-toggle>
-                    <ion-item lines="none">
-                        <ion-icon name="business" slot="start"> </ion-icon>
-                        <ion-label>Descubre Lugares</ion-label>
-                    </ion-item>
-                </ion-menu-toggle>
-                <ion-menu-toggle>
-                    <ion-item lines="none" routerLink="/reservas">
-                        <ion-icon name="checkbox-outline" slot="start"> </ion-icon>
-                        <ion-label>Tus Reservaciones</ion-label>
+                    <ion-item lines="none" button>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <ion-label slot="end" class="label">ME</ion-label>
                     </ion-item>
                 </ion-menu-toggle>
                 <ion-menu-toggle>
                     <ion-item lines="none" button>
-                        <ion-icon name="exit" slot="start"> </ion-icon>
-                        <ion-label>Logout</ion-label>
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                        <ion-label slot="end" class="label">PORTAFOLIO</ion-label>
                     </ion-item>
                 </ion-menu-toggle>
+                <ion-menu-toggle>
+                    <ion-item lines="none" button>
+                        <ion-icon name="finger-print-outline"></ion-icon>
+                        <ion-label slot="end" class="label">CONTACT</ion-label>
+                    </ion-item>
+                </ion-menu-toggle>
+
+
             </ion-list>
         </ion-content>
     </ion-menu>
