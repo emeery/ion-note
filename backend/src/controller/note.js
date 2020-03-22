@@ -32,4 +32,18 @@ router.get('', async(req, res) => {
     } catch (e) { res.status(500).send() }
 });
 
+router.delete('/:id', async(req, res) => {
+    try {
+        const nota = await Nota.findOneAndDelete({
+            _id: req.params.id,
+        })
+        if (!nota) {
+            return res.status(404).json({
+                mensaje: 'no autorizado'
+            })
+        }
+        res.status(200).json({ mensaje: 'nota eliminada' })
+    } catch (e) { res.status(500).send() }
+});
+
 module.exports = router
