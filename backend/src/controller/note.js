@@ -4,27 +4,32 @@ const Nota = require('../model/note')
 
 router.post('', async(req, res) => {
     const nota = new Nota({
-        descripcion: req.body.descripcion,
+        titulo: req.body.titulo,
+        descripcion: req.body.descripcion
         // titular: req.userr._id
     })
     try {
-        console.log('no',nota);
-        // await tweet.save()
-        // res.status(201).json({
-        //     mensaje: 'nota agregada',
-        //     nota: {
-        //         id: nota._id,
-        //         descripcion: nota.descripcion,
-        //         // titular: tweet.titular
-        //     }
-        // })
+        await nota.save()
+        res.status(201).json({
+            mensaje: 'nota agregada',
+            nota: {
+                id: nota._id,
+                titulo: nota.titulo,
+                descripcion: nota.descripcion,
+                // titular: tweet.titular
+            }
+        })
     } catch (e) { res.status(400).send(e) }
 });
 
 router.get('', async(req, res) => {
     try {
-        res.send('jiji')
+        const notas = await Nota.find({})
+        res.status(200).json({
+            mensaje: "todos tus notas",
+            notas,
+        })
     } catch (e) { res.status(500).send() }
-  });
+});
 
 module.exports = router

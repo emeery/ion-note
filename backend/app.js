@@ -1,5 +1,6 @@
 var express = require('express');
 const bodyparser = require('body-parser')
+require('./src/config/db')
 var app = express()
 
 const noteRouter = require('./src/controller/note')
