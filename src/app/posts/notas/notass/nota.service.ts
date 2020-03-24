@@ -12,7 +12,7 @@ export class NotaService {
   constructor(private http: HttpClient) {}
   getNotes() {
     this.http.get<{mensaje: string; notas: any}>(
-      'http://localhost:8090/' + 'note')
+      'http://localhost:8090/note')
     .pipe(
       map((res) => {
         console.log('r', res);
@@ -29,6 +29,11 @@ export class NotaService {
       this.notas = twtD;
       this.notasListen.next([...this.notas]);
     });
+  }
+  addNote(t: string, d: string) {
+    const notaData: Notas = {id: null, titulo: t, descripcion: d};
+    this.http.post('http://localhost:8090/note', notaData)
+    .subscribe(res => this.getNotes());
   }
   getNoteListener() {
     return this.notasListen.asObservable();
