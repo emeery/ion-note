@@ -15,24 +15,39 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-    <!-- <ion-segment>
-        <ion-segment-button value="all" checked>TODOS</ion-segment-button>
-        <ion-segment-button value="reservas">IMPORTANTES</ion-segment-button>
-    </ion-segment> -->
     <ion-grid>
         <ion-row *ngFor="let n of notas">
             <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
                 <ion-card>
                     <ion-card-header>
-                        <ion-card-title class="title"> {{n.titulo}} </ion-card-title>
+                        <ion-card-title class="title"> {{n.titulo}}
+                        </ion-card-title>
                     </ion-card-header>
                     <ion-card-content>
                         <p>
                             <ion-text class="desc">{{n.descripcion}}</ion-text>
                         </p>
                     </ion-card-content>
+                    <ion-footer>
+                        <ion-row>
+                            <ion-col>
+                                <ion-button color="secondary" size="small">...</ion-button>
+                            </ion-col>
+                            <ion-col center text-center>
+                                <ion-button color="danger" size="small">X</ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-footer>
                 </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>
+
+<!-- <ion-content>
+    <ion-item detail>
+        <ion-label>
+            Standard Item with Detail Arrow
+        </ion-label>
+    </ion-item>
+</ion-content> -->
