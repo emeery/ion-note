@@ -31,10 +31,10 @@
                     <ion-footer>
                         <ion-row>
                             <ion-col>
-                                <ion-button color="secondary" size="small">...</ion-button>
+                                <ion-button color="primary" routerLink="/edit">...</ion-button>
                             </ion-col>
                             <ion-col center text-center>
-                                <ion-button color="danger" size="small">X</ion-button>
+                                <ion-button (click)="onDelete(n.id)" color="danger">X</ion-button>
                             </ion-col>
                         </ion-row>
                     </ion-footer>
@@ -43,11 +43,3 @@
         </ion-row>
     </ion-grid>
 </ion-content>
-
-<!-- <ion-content>
-    <ion-item detail>
-        <ion-label>
-            Standard Item with Detail Arrow
-        </ion-label>
-    </ion-item>
-</ion-content> -->

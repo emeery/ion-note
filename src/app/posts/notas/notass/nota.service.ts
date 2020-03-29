@@ -35,7 +35,12 @@ export class NotaService {
     this.http.post('http://localhost:8090/note', notaData)
     .subscribe(res => this.getNotes());
   }
+  deleteNote(id: string) {
+    return this.http.delete<{mensaje: string}>(
+      'http://localhost:8090/note/' + id);
+  }
   getNoteListener() {
     return this.notasListen.asObservable();
   }
+
 }

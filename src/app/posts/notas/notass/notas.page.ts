@@ -36,6 +36,10 @@ export class NotasPage implements OnInit, OnDestroy {
       return mdlEl.dismiss();
     }).then(res => console.log('r', res));
   }
+  onDelete(noteid: string) {
+    this.noteService.deleteNote(noteid)
+    .subscribe(() => { this.getNotes(); });
+  }
   ngOnDestroy() {
     this.notasS.unsubscribe();
   }
