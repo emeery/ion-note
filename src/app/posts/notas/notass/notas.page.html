@@ -9,8 +9,6 @@
                 <ion-icon slot="icon-only" name="add"></ion-icon>
             </ion-button>
         </ion-buttons>
-
-
     </ion-toolbar>
 </ion-header>
 
@@ -31,7 +29,7 @@
                     <ion-footer>
                         <ion-row>
                             <ion-col>
-                                <ion-button color="primary" routerLink="/edit">...</ion-button>
+                                <ion-button color="primary" (click)="editNote(n.id)">...</ion-button>
                             </ion-col>
                             <ion-col center text-center>
                                 <ion-button (click)="onDelete(n.id)" color="danger">X</ion-button>

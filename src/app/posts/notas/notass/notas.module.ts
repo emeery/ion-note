@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { NotasPage } from './notas.page';
 import { NotasPageRoutingModule } from './notas-routing.module';
 import { AddNotaComponent } from '../add-nota/add-nota.component';
+import { EditNotaComponent } from '../edit-nota/edit-nota.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { AddNotaComponent } from '../add-nota/add-nota.component';
     IonicModule,
     NotasPageRoutingModule
   ],
-  declarations: [NotasPage, AddNotaComponent],
-  entryComponents: [AddNotaComponent]
+  declarations: [NotasPage, AddNotaComponent, EditNotaComponent],
+  entryComponents: [AddNotaComponent, EditNotaComponent]
 })
 export class NotasPageModule {}

@@ -32,6 +32,30 @@ router.get('', async(req, res) => {
     } catch (e) { res.status(500).send() }
 });
 
+router.get('/:id', async(req, res) => {
+    try {
+        const note = await Nota.findById(req.params.id)
+        if(!note) res.status(404).send()
+        res.send(note)
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
+router.put('/:id', async(req, res) => {
+    try {
+        const newNote = new Nota({
+            _id: req.params.id,
+            titulo: req.body.titulo,
+            descripcion: req.body.descripcion
+        })
+        await Nota.updateOne({_id: req.params.id}, newNote)
+        res.status(200).json({mensaje: 'nota update'})
+    } catch (e) {
+        
+    }
+})
+
 router.delete('/:id', async(req, res) => {
     try {
         const nota = await Nota.findOneAndDelete({
